@@ -181,6 +181,11 @@
       "from": "diff@1.4.0",
       "resolved": "https://registry.npmjs.org/diff/-/diff-1.4.0.tgz"
     },
+    "double-ended-queue": {
+      "version": "2.1.0-0",
+      "from": "double-ended-queue@>=2.1.0-0 <3.0.0",
+      "resolved": "https://registry.npmjs.org/double-ended-queue/-/double-ended-queue-2.1.0-0.tgz"
+    },
     "duplexify": {
       "version": "3.4.2",
       "from": "duplexify@>=3.2.0 <4.0.0",
@@ -676,6 +681,16 @@
       "version": "2.0.5",
       "from": "readable-stream@>=2.0.0 <3.0.0",
       "resolved": "https://registry.npmjs.org/readable-stream/-/readable-stream-2.0.5.tgz"
+    },
+    "redis": {
+      "version": "2.4.2",
+      "from": "redis@*",
+      "resolved": "https://registry.npmjs.org/redis/-/redis-2.4.2.tgz"
+    },
+    "redis-commands": {
+      "version": "1.0.2",
+      "from": "redis-commands@>=1.0.1 <2.0.0",
+      "resolved": "https://registry.npmjs.org/redis-commands/-/redis-commands-1.0.2.tgz"
     },
     "reduce-component": {
       "version": "1.0.1",

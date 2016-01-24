@@ -9,7 +9,9 @@ var photos = require('./controllers/photos');
 app.use(express.json());
 
 /* Receive the data from Flickr and save in Redis, then send to socket */
-app.post('/', photos.save, photos.send);
+app.post('/', photos.save, photos.send, function(req, res){
+  res.send('\nSend!\n\n');
+});
 
 app.get('/', photos.get);
 
