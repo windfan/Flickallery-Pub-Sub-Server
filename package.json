@@ -1,0 +1,17 @@
+{
+  "name": "pubsub",
+  "version": "1.0.0",
+  "description": "Flickallery pub/sub server",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tzu-Hao Huang",
+  "license": "MIT",
+  "devDependencies": {
+    "json-server": "^0.8.7"
+  },
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
