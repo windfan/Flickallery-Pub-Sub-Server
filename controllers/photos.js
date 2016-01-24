@@ -18,10 +18,19 @@ module.exports.trim = function(){
 };
 
 /* Send photos to to pub/sub socket in models */
-module.exports.send = function(){
-
+module.exports.send = function(request, response, next){
+  var photoList = _.clone(request.body);
+  photos.send(photoList);
+  response.send(200, "Success");
+  next();
 };
 
 module.exports.get = function(){
-
+  photos.get(function(error, data){
+    response.json(error ? 503 : 200, {
+      error: error ? 503 : null,
+      errorMessage: error ? error : null,
+      data: data
+    })
+  });
 };
