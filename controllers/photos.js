@@ -19,9 +19,9 @@ module.exports.trim = function(){
 
 /* Send photos to to pub/sub socket in models */
 module.exports.send = function(request, response, next){
-  var photoList = _.clone(request.body);
-  photos.send(photoList);
-  response.send(200, "Success");
+  // var photoList = _.clone(request.body);
+  // photos.send(photoList);
+  // response.send(200, "Success");
   next();
 };
 

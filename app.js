@@ -2,11 +2,11 @@
 
 var express = require('express');
 var app = express();
-var port = process.env.PORT || 3001;
+var port = process.env.PORT || 8000;
 var photos = require('./controllers/photos');
-
+var bodyParser = require('body-parser');
 /* Parse the incoming data from Flickr to be json format */
-app.use(express.json());
+app.use(bodyParser.json());
 
 /* Receive the data from Flickr and save in Redis, then send to socket */
 app.post('/', photos.save, photos.send, function(req, res){
@@ -17,5 +17,5 @@ app.get('/', photos.get);
 
 
 app.listen(port, function(){
-  console.log('Listening on port 3001');
+  console.log('Listening on port %d', port);
 });
