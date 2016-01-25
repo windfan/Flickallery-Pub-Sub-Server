@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 /* Receive the data from Flickr and save in Redis, then send to socket */
 app.post('/', photos.save, photos.trim, photos.send);
 
-app.get('/', photos.get);
+app.get('/photos', photos.get);
 
 
 app.listen(port, function(){

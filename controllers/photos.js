@@ -28,8 +28,8 @@ module.exports.send = function(request, response, next){
   //response.send(200, "Success");
   next();
 };
-
-module.exports.get = function(){
+/* Get 10 photos from model */
+module.exports.get = function(request, response, next){
   photos.get(function(error, data){
     response.json(error ? 503 : 200, {
       error: error ? 503 : null,
@@ -37,4 +37,5 @@ module.exports.get = function(){
       data: data
     })
   });
+  next();
 };

@@ -29,3 +29,13 @@ module.exports.send = function(photoList, callback){
   photoList.forEach(broadcast.send);
   callback(null, null);
 };
+
+/* Get photos from redis */
+/*  @param {Function} callback
+ */
+module.exports.get = function(callback) {
+  redis.lrange('photos', 0, -1, function(error, data){
+    if(error) return callback(error, null);
+    callback(null, data.map(JSON.parse()));
+  });
+}
