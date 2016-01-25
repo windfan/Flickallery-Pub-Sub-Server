@@ -9,9 +9,7 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
 /* Receive the data from Flickr and save in Redis, then send to socket */
-app.post('/', photos.save, photos.send, function(req, res){
-  res.send('\nSend!\n\n');
-});
+app.post('/', photos.save, photos.trim, photos.send);
 
 app.get('/', photos.get);
 

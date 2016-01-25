@@ -14,3 +14,9 @@ module.exports.save = function(photoList, callback) {
     module.exports.save(photoList, callback);
   });
 };
+
+module.exports.trim = function() {
+  redis.ltrim('photos', 0, 9, function(error){
+    if(error) throw error;
+  });
+};
