@@ -23,19 +23,18 @@ module.exports.send = function(request, response, next){
   var photoList = _.clone(request.body);
   photos.send(photoList, function(error){
     if(error) return response.json(503, {error: true} );
-    response.json(200, { error: null });
+    response.status(200).json({ error: null });
   });
   //response.send(200, "Success");
   next();
 };
 /* Get 10 photos from model */
-module.exports.get = function(request, response, next){
+module.exports.get = function(request, response){
   photos.get(function(error, data){
-    response.json(error ? 503 : 200, {
+    response.status(error ? 503 : 200).json({
       error: error ? 503 : null,
       errorMessage: error ? error : null,
       data: data
     })
   });
-  next();
 };
